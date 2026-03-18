@@ -1,10 +1,6 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1c2333,100:1f3a5f&height=220&section=header&text=Enes%20Kemal%20Ergin&fontSize=52&fontColor=c9d1d9&animation=fadeIn&fontAlignY=38&desc=Staff%20Bioinformatician%20%E2%80%94%20BC%20Children%27s%20Hospital%20Research%20Institute&descAlignY=58&descSize=17&descColor=8b949e" />
-</div>
 
-<div align="center">
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Mono&weight=500&size=15&duration=3500&pause=1400&color=58A6FF&center=true&vCenter=true&repeat=true&width=860&height=38&lines=Statistics+first.+ML+when+classical+methods+hit+their+limits.;Building+protein+language+models+for+pediatric+cancer.;PhD+Bioinformatics+%28UBC%29+%E2%80%94+BSc+Computer+Science.;Zig+%2B+Rust+%2B+Python+%2B+R+%E2%80%94+right+tool%2C+right+problem.)](https://git.io/typing-svg)
+<sub><strong>Statistics first. ML when classical methods hit their limits.</strong></sub>
 
 </div>
 
@@ -13,20 +9,6 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-eneskemalergin.github.io-1f3a5f?style=flat-square&logo=github&logoColor=white)](https://eneskemalergin.github.io) &nbsp; [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-8%20publications-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=6iZzHecAAAAJ&hl=en) &nbsp; [![ORCID](https://img.shields.io/badge/ORCID-0000--0001--9810--7399-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0001-9810-7399)
 
 ![Computational Proteomics](https://img.shields.io/badge/Computational%20Proteomics-0a3d3d?style=flat-square) &nbsp; ![Statistical Methods](https://img.shields.io/badge/Statistical%20Methods-1f3a5f?style=flat-square) &nbsp; ![Protein Language Models](https://img.shields.io/badge/Protein%20Language%20Models-2d1a4e?style=flat-square) &nbsp; ![Pediatric Oncology](https://img.shields.io/badge/Pediatric%20Oncology-4e0a2a?style=flat-square) &nbsp; ![Systems Programming](https://img.shields.io/badge/Systems%20Programming-1a3d1a?style=flat-square)
-
-</div>
-
----
-
-<div align="center">
-
-## About
-
-Staff Bioinformatician at [BCCHR](https://bcchr.ca) (BC Children's Hospital Research Institute). My work builds statistical methods and computational tools for **pediatric cancer proteomics** — conditions where every interpretable result matters and false positives carry real cost.
-
-My operating principle: classical statistical methods are transparent, testable, and often sufficient. I reach for machine learning when the problem genuinely demands it. Right now that means **protein language models** and **transfer learning** for cross-dataset protein quantification.
-
-Outside the biology stack I write systems-level tooling in **Zig** and **Rust** — because genomics I/O parsers that bottleneck on single-threaded string scanning shouldn't be the norm.
 
 </div>
 
@@ -124,20 +106,4 @@ Outside the biology stack I write systems-level tooling in **Zig** and **Rust** 
 
 *Older learning repos: [Essential Algorithms](https://github.com/eneskemalergin/Essential_Algorithms) · [Data Structures & Algorithms](https://github.com/eneskemalergin/Data_Structures_and_Algorithms) · [Bioinformatics-Ore](https://github.com/eneskemalergin/Bioinformatics-Ore) · [Proteomics-Ore](https://github.com/eneskemalergin/Proteomics-Ore)*
 
-</div>
-
----
-
-<div align="center">
-
-## Stats
-
-<img src="https://github-readme-stats.vercel.app/api?username=eneskemalergin&show_icons=true&theme=github_dark&hide_border=true&count_private=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" height="165" />&nbsp;<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=eneskemalergin&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9" height="165" />
-
-</div>
-
----
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1f3a5f,50:1c2333,100:0d1117&height=120&section=footer" />
 </div>
