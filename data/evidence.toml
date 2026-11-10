@@ -1,0 +1,60 @@
+# Comparisons in the evidence figure, one row each.
+# fast and small are [low, high] ratios of the peer's value over the tool's
+# (time and peak memory); equal values draw a single point.
+# Every value must appear on, or follow directly from, the public page in source.
+# line picks the row's color from data/tools.toml.
+
+[[rows]]
+tool = "z-fasta"
+task = "index the human genome"
+peer = "samtools faidx 1.24"
+line = "seq"
+correct = "same .fai bytes, 19 of 19 cases"
+fast = [24.7, 24.7]   # 8.1025 s / 0.3279 s
+small = [2.52, 2.52]  # 9.11 MiB / 3.61 MiB
+measured = "2026-10-15"
+source = "https://github.com/eneskemalergin/z-fasta/blob/main/bench/index/REPORT.md"
+
+[[rows]]
+tool = "zmz"
+task = "decode mzML"
+peer = "OpenMS 3.6.0"
+line = "ms"
+correct = "69 of 69 hard files; OpenMS 64"
+fast = [4.42, 4.42]   # 221 MB/s / 50 MB/s
+small = [213, 213]    # 597 MiB / 2.8 MiB
+measured = "2026-10-13"
+source = "https://github.com/eneskemalergin/zmz/wiki/Benchmarks"
+
+[[rows]]
+tool = "zmz"
+task = "decode mzML"
+peer = "mzdata 0.67.4"
+line = "ms"
+correct = "69 of 69 hard files; mzdata 36"
+fast = [1.70, 1.70]   # 221 MB/s / 130 MB/s
+small = [10.4, 10.4]  # 29 MiB / 2.8 MiB
+measured = "2026-10-13"
+source = "https://github.com/eneskemalergin/zmz/wiki/Benchmarks"
+
+[[rows]]
+tool = "z-fastq"
+task = "count FASTQ records"
+peer = "Needletail 0.7.3"
+line = "seq"
+correct = "right on 218 of 218 inputs"
+fast = [1.14, 1.37]   # gzip, plain
+small = [2.25, 2.57]  # gzip, plain
+measured = "2026-10-28"
+source = "https://github.com/eneskemalergin/z-fastq/tree/main/bench/count"
+
+[[rows]]
+tool = "zipir"
+task = "zlib decompression"
+peer = "zlib-ng"
+line = "base"
+correct = "same output bytes"
+fast = [1.34, 1.34]   # geometric mean over the small and medium files
+small = [2.72, 2.85]  # per file, same files, from measurements.tsv
+measured = "2026-10-25"
+source = "https://github.com/eneskemalergin/zipir/tree/main/bench/linux-x86-avx2"

@@ -1,0 +1,356 @@
+# Tools on the profile: one [[lines]] row per map line, one [[tools]] row per tool.
+# tools/build.py draws the map and writes the README lists from this file.
+# status: public (linked), dev (named, not linked), hidden (left out)
+# role: two or three words under the station; summary: one sentence for the list.
+# branch (line): the line branches from the shared libraries line, id "base".
+# hub (tool): other tools build on it; drawn as a larger station.
+
+[[lines]]
+id = "analysis"
+title = "Proteomics analysis"
+since = "2017"
+stack = "Python and R"
+
+[[lines]]
+id = "ms"
+title = "Mass spectrometry"
+since = "2025"
+stack = "Zig"
+branch = true
+
+[[lines]]
+id = "seq"
+title = "Sequence data"
+since = "2026"
+stack = "Zig"
+branch = true
+
+[[lines]]
+id = "ngs"
+title = "NGS tools"
+since = "2026"
+stack = "Zig"
+branch = true
+
+[[lines]]
+id = "base"
+title = "Shared libraries"
+since = "2026"
+stack = "Zig"
+
+# ------------------------------------------------------------ proteomics analysis
+[[tools]]
+name = "pepVet"
+line = "analysis"
+role = "plan a digest"
+status = "public"
+url = "https://bioconductor.org/packages/pepVet/"
+lang = "R"
+summary = "Scores how well each protein digests before a run; in Bioconductor."
+
+[[tools]]
+name = "pxseek"
+line = "analysis"
+role = "find datasets"
+status = "public"
+url = "https://github.com/LangeLab/pxseek"
+lang = "Python"
+summary = "Queries, filters, and downloads ProteomeXchange metadata, with a local cache."
+
+[[tools]]
+name = "PXAudit"
+line = "analysis"
+role = "grade for reuse"
+status = "public"
+url = "https://github.com/LangeLab/PXAudit"
+lang = "Python"
+summary = "Grades PRIDE datasets for reuse on six FAIR-readiness tiers."
+
+[[tools]]
+name = "HarmonizePy"
+line = "analysis"
+role = "batch correction"
+status = "public"
+url = "https://github.com/LangeLab/HarmonizePy"
+lang = "Python"
+summary = "Batch correction that tolerates missing values, ported from HarmonizR and checked against it."
+
+[[tools]]
+name = "SQuAPP"
+line = "analysis"
+role = "analysis app"
+status = "public"
+url = "https://github.com/LangeLab/SQuAPP"
+lang = "R"
+summary = "Shiny app for QC and quantitative analysis of proteins and PTMs, for people who do not code."
+
+[[tools]]
+name = "QuEStVar"
+line = "analysis"
+role = "equivalence tests"
+status = "public"
+url = "https://github.com/eneskemalergin/QuEStVar"
+lang = "Python"
+summary = "Tests for equivalence beside difference, so a protein can be called stable, changed, or undetermined."
+
+[[tools]]
+name = "ProteoForge"
+line = "analysis"
+role = "proteoforms"
+status = "public"
+url = "https://github.com/eneskemalergin/ProteoForge"
+lang = "Python"
+summary = "Finds peptides that break from the rest of their protein and groups them into differential proteoforms."
+
+[[tools]]
+name = "ihwkit"
+line = "analysis"
+role = "weighted FDR"
+status = "public"
+url = "https://github.com/eneskemalergin/ihwkit"
+lang = "Python"
+summary = "Independent Hypothesis Weighting in NumPy only, checked against Bioconductor IHW."
+
+[[tools]]
+name = "loqculate"
+line = "analysis"
+role = "LOD and LOQ"
+status = "public"
+url = "https://github.com/eneskemalergin/loqculate"
+lang = "Python"
+summary = "Limits of detection and quantitation from calibration curves, with confidence intervals."
+
+[[tools]]
+name = "FusionPep"
+line = "analysis"
+role = "fusion peptides"
+status = "public"
+url = "https://github.com/LangeLab/FusionPep"
+lang = "R"
+summary = "Maps peptides onto a fusion protein and both parents, and checks which matches span the junction."
+
+# ------------------------------------------------------------ mass spectrometry
+[[tools]]
+name = "zmz"
+line = "ms"
+role = "read and write mzML"
+hub = true
+status = "public"
+url = "https://github.com/eneskemalergin/zmz"
+lang = "Zig"
+summary = "mzML reader and writer that streams in a few MiB; the other tools on this line build on it."
+
+[[tools]]
+name = "mzValidate"
+line = "ms"
+role = "validate"
+status = "public"
+url = "https://github.com/eneskemalergin/mzValidate"
+lang = "Zig"
+summary = "Validates mzML in one streaming pass."
+
+[[tools]]
+name = "mzDiff"
+line = "ms"
+role = "compare runs"
+status = "public"
+url = "https://github.com/eneskemalergin/mzDiff"
+lang = "Zig"
+summary = "Compares two mzML files by meaning rather than bytes, in bounded memory."
+
+[[tools]]
+name = "mzArc"
+line = "ms"
+role = "compress"
+status = "public"
+url = "https://github.com/eneskemalergin/mzarc"
+lang = "Zig"
+summary = "Compresses mzML, byte-exact when asked, in about 1 MiB of memory."
+
+[[tools]]
+name = "zpx"
+line = "ms"
+role = "peptides and decoys"
+status = "dev"
+url = ""
+lang = "Zig"
+summary = "Turns a protein FASTA into exactly defined peptide sets for a search: digestion, Unimod modifications, and target-decoy databases, streaming in bounded memory."
+
+[[tools]]
+name = "mzBridge"
+line = "ms"
+role = "vendor raw to mzML"
+status = "hidden"
+url = ""
+lang = "Zig"
+summary = "Reads Thermo .raw files and timsTOF .d directories without vendor libraries, and writes indexed mzML."
+
+# ------------------------------------------------------------ sequence data
+[[tools]]
+name = "z-fastq"
+line = "seq"
+role = "count and stats"
+status = "public"
+url = "https://github.com/eneskemalergin/z-fastq"
+lang = "Zig"
+summary = "Counts, summarizes, and validates FASTQ, plain or gzip, in a few MiB for most jobs."
+
+[[tools]]
+name = "z-fasta"
+line = "seq"
+role = "index and extract"
+status = "public"
+url = "https://github.com/eneskemalergin/z-fasta"
+lang = "Zig"
+summary = "Indexes, extracts, and validates FASTA, writing samtools-compatible .fai files."
+
+[[tools]]
+name = "zamf"
+line = "seq"
+role = "SAM and BAM"
+status = "dev"
+url = ""
+lang = "Zig"
+summary = "SAM and BAM toolkit in fixed memory that takes SAMtools' option letters."
+
+# ------------------------------------------------------------ NGS tools
+# focus: optional; tools sharing a focus are grouped under it in the README list
+[[tools]]
+name = "refz"
+line = "ngs"
+role = "reference bundle"
+status = "dev"
+url = ""
+lang = "Zig"
+summary = "Builds one versioned reference from the genome, GENCODE, MANE, and HGNC that every tool maps from disk, so they all agree on genes, exons, and coordinates."
+
+[[tools]]
+name = "starz"
+line = "ngs"
+role = "RNA-seq aligner"
+status = "dev"
+url = ""
+lang = "Zig"
+summary = "Spliced RNA-seq aligner that follows STAR's method and takes STAR's option names, on one thread with a shared reference."
+
+[[tools]]
+name = "arribaz"
+line = "ngs"
+role = "Arriba's method"
+status = "hidden"
+url = ""
+lang = "Zig"
+summary = "Calls fusions from alignments with Arriba's method."
+
+[[tools]]
+name = "starfusionz"
+line = "ngs"
+role = "STAR-Fusion's method"
+status = "hidden"
+url = ""
+lang = "Zig"
+summary = "Calls fusions from STAR's chimeric junctions with STAR-Fusion's method, on one thread."
+
+[[tools]]
+name = "ctatsplicingz"
+line = "ngs"
+role = "cancer splicing"
+status = "hidden"
+url = ""
+lang = "Zig"
+summary = "Finds cancer-associated splicing such as MET exon 14 skipping, after CTAT-Splicing."
+
+[[tools]]
+name = "ciceroz"
+line = "ngs"
+role = "CICERO's method"
+status = "hidden"
+url = ""
+lang = "Zig"
+summary = "Native port of St. Jude's CICERO fusion caller."
+
+[[tools]]
+name = "zeklem"
+line = "ngs"
+role = "fusion junctions"
+status = "dev"
+url = ""
+lang = "Zig"
+focus = "Gene fusions in RNA-seq"
+summary = "Finds listed fusion junctions straight from paired FASTQ, with a sensitivity estimate behind every negative."
+
+[[tools]]
+name = "zigot"
+line = "ngs"
+role = "fusion test reads"
+status = "dev"
+url = ""
+lang = "Zig"
+focus = "Gene fusions in RNA-seq"
+summary = "Simulates RNA-seq libraries with per-read truth from declared fusions, for testing callers."
+
+# ------------------------------------------------------------ shared libraries
+[[tools]]
+name = "zipir"
+line = "base"
+role = "DEFLATE and BGZF"
+hub = true
+status = "public"
+url = "https://github.com/eneskemalergin/zipir"
+lang = "Zig"
+summary = "gzip, zlib, DEFLATE, BGZF, and tar with no dependencies, in fixed memory."
+
+[[tools]]
+name = "z-xml"
+line = "base"
+role = "XML"
+status = "public"
+url = "https://github.com/eneskemalergin/z-xml"
+lang = "Zig"
+summary = "XML event reader, document model, and streaming writer."
+
+[[tools]]
+name = "b64z"
+line = "base"
+role = "Base64"
+status = "public"
+url = "https://github.com/eneskemalergin/b64z"
+lang = "Zig"
+summary = "Strict RFC 4648 Base64 with scalar and AVX2 paths."
+
+[[tools]]
+name = "z-oci"
+line = "base"
+role = "container images"
+status = "public"
+url = "https://github.com/eneskemalergin/z-oci"
+lang = "Zig"
+summary = "Read-only client for OCI and Docker registries, with digest checks."
+
+[[tools]]
+name = "zebrac"
+line = "base"
+role = "benchmarks"
+status = "public"
+url = "https://github.com/eneskemalergin/zebrac"
+lang = "Zig"
+summary = "Benchmarks commands on Linux with hardware counters and peak memory."
+
+[[tools]]
+name = "z-toml"
+line = "base"
+role = "TOML"
+hub = true
+status = "public"
+url = "https://github.com/eneskemalergin/z-toml"
+lang = "Zig"
+summary = "TOML 1.1.0 parser, checked against the official test corpus."
+
+[[tools]]
+name = "kanit"
+line = "base"
+role = "workflows"
+status = "public"
+url = "https://github.com/Zenteomics/kanit"
+lang = "Zig"
+summary = "Workflow engine for one Linux workstation: every task within budget, every attempt on record."
