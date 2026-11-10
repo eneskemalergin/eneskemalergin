@@ -3,7 +3,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img src="assets/header-light.svg" alt="Enes K. Ergin, PhD. Bioinformatician in Vancouver: proteomics, gene fusions, and fast tools with a small footprint. Behind the name, one ridge per year of weekly GitHub contributions." width="100%">
+  <img src="assets/header-light.svg" alt="Enes K. Ergin, PhD. Bioinformatician in Vancouver: correct, fast, lightweight tools for biological data. Behind the name, one ridge per year of weekly GitHub contributions." width="100%">
 </picture>
 
 <p align="center">
@@ -24,7 +24,7 @@ When I build a tool, I follow the same rules, in order of priority:
 1. **Correctness.** Exhaustive checks and edge cases covered, with results compared against a reference or peer tool, so the answer is right.
 2. **Speed.** Optimized to run as fast as it can, and measured against the tools people already use.
 3. **Memory footprint.** Memory stays bounded instead of growing with the input, so precious resources are not wasted.
-4. **Portability.** Few dependencies and a self-contained build, so it installs and runs wherever the data is.
+4. **Portability.** Few dependencies, and command-line tools ship as ready-to-run programs, so they run where the data is without a build step.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/evidence-dark.svg">

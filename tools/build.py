@@ -161,7 +161,7 @@ def header(t, years, fetched):
     total = sum(years[newest])
     asof = date.fromisoformat(fetched)
     o = svg_open(t, height, "Enes K. Ergin, PhD",
-                 f"Bioinformatician in Vancouver: proteomics, gene fusions, and fast tools with a small footprint. "
+                 f"Bioinformatician in Vancouver: correct, fast, lightweight tools for biological data. "
                  f"Behind the name, one ridge per year of weekly GitHub contributions from {order[0]} to {asof:%B %Y}, "
                  f"newest in front; {total:,} contributions in {newest} so far.",
                  f".nm{{font-size:30px;font-weight:600;fill:{t['ink']}}} .tg{{font-size:15px;fill:{t['ink2']}}} "
@@ -192,8 +192,8 @@ def header(t, years, fetched):
             o.append(f'<text class="yr" x="{x1 + 8}" y="{by + 3}">{year}</text>')
     o.append('<text class="nm" x="24" y="58">Enes K. Ergin, PhD</text>')
     o.append('<text class="tg" x="24" y="86">Bioinformatician in Vancouver</text>')
-    o.append('<text class="tg" x="24" y="108">Proteomics, gene fusions, and</text>')
-    o.append('<text class="tg" x="24" y="130">fast tools with a small footprint</text>')
+    o.append('<text class="tg" x="24" y="108">Correct, fast, lightweight tools</text>')
+    o.append('<text class="tg" x="24" y="130">for biological data</text>')
     o.append(f'<text class="cp" x="24" y="{height - 14}">Ridges: weekly GitHub contributions per year, '
              f'{order[0]} to {asof:%B %Y}</text>')
     o.append("</svg>")

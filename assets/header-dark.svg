@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" width="960" height="250" role="img" aria-labelledby="t d">
 <title id="t">Enes K. Ergin, PhD</title>
-<desc id="d">Bioinformatician in Vancouver: proteomics, gene fusions, and fast tools with a small footprint. Behind the name, one ridge per year of weekly GitHub contributions from 2014 to November 2026, newest in front; 4,013 contributions in 2026 so far.</desc>
+<desc id="d">Bioinformatician in Vancouver: correct, fast, lightweight tools for biological data. Behind the name, one ridge per year of weekly GitHub contributions from 2014 to November 2026, newest in front; 4,013 contributions in 2026 so far.</desc>
 <style>text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif} .nm{font-size:30px;font-weight:600;fill:#e6edf3} .tg{font-size:15px;fill:#9198a1} .yr{font-size:10px;fill:#6e7681} .cp{font-size:11px;fill:#6e7681}</style>
 <rect width="960" height="250" rx="6" fill="#0d1117"/>
 <path d="M330,60 L330.0,60.0 C335.5,60.0 335.5,60.0 341.1,60.0 C346.6,60.0 346.6,60.0 352.2,60.0 C357.7,60.0 357.7,60.0 363.2,60.0 C368.8,60.0 368.8,60.0 374.3,60.0 C379.8,60.0 379.8,60.0 385.4,60.0 C390.9,60.0 390.9,60.0 396.5,60.0 C402.0,60.0 402.0,60.0 407.5,60.0 C413.1,60.0 413.1,60.0 418.6,60.0 C424.2,60.0 424.2,60.0 429.7,60.0 C435.2,60.0 435.2,60.0 440.8,60.0 C446.3,60.0 446.3,60.0 451.8,60.0 C457.4,60.0 457.4,60.0 462.9,60.0 C468.5,60.0 468.5,60.0 474.0,60.0 C479.5,60.0 479.5,60.0 485.1,60.0 C490.6,60.0 490.6,60.0 496.2,60.0 C501.7,60.0 501.7,60.0 507.2,60.0 C512.8,60.0 512.8,60.0 518.3,60.0 C523.8,60.0 523.8,60.0 529.4,60.0 C534.9,60.0 534.9,59.8 540.5,59.8 C546.0,59.8 546.0,59.8 551.5,59.8 C557.1,59.8 557.1,59.8 562.6,59.8 C568.2,59.8 568.2,60.0 573.7,60.0 C579.2,60.0 579.2,60.0 584.8,60.0 C590.3,60.0 590.3,60.0 595.8,60.0 C601.4,60.0 601.4,60.0 606.9,60.0 C612.5,60.0 612.5,60.0 618.0,60.0 C623.5,60.0 623.5,60.0 629.1,60.0 C634.6,60.0 634.6,60.0 640.2,60.0 C645.7,60.0 645.7,60.0 651.2,60.0 C656.8,60.0 656.8,60.0 662.3,60.0 C667.8,60.0 667.8,60.0 673.4,60.0 C678.9,60.0 678.9,60.0 684.5,60.0 C690.0,60.0 690.0,60.0 695.5,60.0 C701.1,60.0 701.1,60.0 706.6,60.0 C712.2,60.0 712.2,60.0 717.7,60.0 C723.2,60.0 723.2,60.0 728.8,60.0 C734.3,60.0 734.3,60.0 739.8,60.0 C745.4,60.0 745.4,60.0 750.9,60.0 C756.5,60.0 756.5,60.0 762.0,60.0 C767.5,60.0 767.5,60.0 773.1,60.0 C778.6,60.0 778.6,60.0 784.2,60.0 C789.7,60.0 789.7,58.9 795.2,58.9 C800.8,58.9 800.8,58.2 806.3,58.2 C811.8,58.2 811.8,58.0 817.4,58.0 C822.9,58.0 822.9,59.1 828.5,59.1 C834.0,59.1 834.0,57.3 839.5,57.3 C845.1,57.3 845.1,57.4 850.6,57.4 C856.2,57.4 856.2,57.0 861.7,57.0 C867.2,57.0 867.2,59.4 872.8,59.4 C878.3,59.4 878.3,59.4 883.8,59.4 C889.4,59.4 889.4,59.8 894.9,59.8 C900.5,59.8 900.5,60.0 906.0,60.0 L906.0,60" fill="#0d1117" stroke="#1aa89a" stroke-width="1.4" stroke-opacity="0.35" stroke-linejoin="round"/>
@@ -22,7 +22,7 @@
 <text class="yr" x="914" y="219">2026</text>
 <text class="nm" x="24" y="58">Enes K. Ergin, PhD</text>
 <text class="tg" x="24" y="86">Bioinformatician in Vancouver</text>
-<text class="tg" x="24" y="108">Proteomics, gene fusions, and</text>
-<text class="tg" x="24" y="130">fast tools with a small footprint</text>
+<text class="tg" x="24" y="108">Correct, fast, lightweight tools</text>
+<text class="tg" x="24" y="130">for biological data</text>
 <text class="cp" x="24" y="236">Ridges: weekly GitHub contributions per year, 2014 to November 2026</text>
 </svg>
