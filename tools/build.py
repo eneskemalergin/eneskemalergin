@@ -47,6 +47,7 @@ THEMES = {
 # An SVG shown as an image cannot load fonts, so text uses the reader's system sans.
 FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"
 WIDTH = 960
+EVIDENCE_MAX = 300  # right end of the evidence figure's log scale
 
 
 def fail(msg):
@@ -107,6 +108,8 @@ def load_data():
             lo, hi = r[key]
             if not 0 < lo <= hi:
                 fail(f"evidence {r['tool']} vs {r['peer']}: {key} must be [low, high] with 0 < low <= high")
+            if hi > EVIDENCE_MAX:
+                fail(f"evidence {r['tool']} vs {r['peer']}: {key} is past the figure's {EVIDENCE_MAX}x scale")
         if not r["source"].startswith("https://"):
             fail(f"evidence {r['tool']}: source must be an https url")
     shown = [t for t in tools["tools"] if t["status"] != "hidden"]
@@ -236,7 +239,7 @@ def evidence(t, rows):
     height = top + row_h * (n - 1) + 40
     label_x, correct_x, plot_w = 24, 262, 196
     panels = [("Fast", "peer time / tool time", "fast", 476), ("Small", "peer peak memory / tool's", "small", 726)]
-    hi = math.log10(300)
+    hi = math.log10(EVIDENCE_MAX)
     o = svg_open(t, height, "Correct, fast, and small, against named tools", evidence_summary(rows) + ".",
                  f".n{{font-size:14px;font-weight:600;fill:{t['ink']}}} .r{{font-size:12px;fill:{t['ink2']}}} "
                  f".h{{font-size:15px;font-weight:600;fill:{t['ink']}}} .k{{font-size:11px;fill:{t['ink3']}}} "
@@ -259,9 +262,13 @@ def evidence(t, rows):
             lo, hi_v = r[key]
             o.append(f'<line x1="{X(1):.1f}" y1="{y}" x2="{X(hi_v):.1f}" y2="{y}" stroke="{colour}" stroke-width="2" '
                      'stroke-linecap="round" opacity=".5"/>')
-            if lo != hi_v:
-                o.append(f'<line x1="{X(lo):.1f}" y1="{y}" x2="{X(hi_v):.1f}" y2="{y}" stroke="{colour}" stroke-width="8" stroke-linecap="round"/>')
-            o.append(f'<circle cx="{X(hi_v):.1f}" cy="{y}" r="6" fill="{colour}" stroke="{t["surface"]}" stroke-width="2"/>')
+            if lo == hi_v:
+                o.append(f'<circle cx="{X(hi_v):.1f}" cy="{y}" r="6" fill="{colour}" stroke="{t["surface"]}" stroke-width="2"/>')
+            else:
+                # a range is a dot stretched from low to high: a capsule, outlined like the dots
+                for width, stroke in ((16, t["surface"]), (12, colour)):
+                    o.append(f'<line x1="{X(lo):.1f}" y1="{y}" x2="{X(hi_v):.1f}" y2="{y}" stroke="{stroke}" '
+                             f'stroke-width="{width}" stroke-linecap="round"/>')
             o.append(f'<text class="v" x="{X(hi_v) + 11:.1f}" y="{y + 4}">{ratio_range(lo, hi_v)}</text>')
     for i, r in enumerate(rows):
         y = top + i * row_h

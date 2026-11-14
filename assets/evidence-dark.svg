@@ -29,8 +29,8 @@
 <circle cx="494.2" cy="204" r="6" fill="#1aa89a" stroke="#0d1117" stroke-width="2"/>
 <text class="v" x="505.2" y="208">1.7x</text>
 <line x1="476.0" y1="254" x2="486.8" y2="254" stroke="#cf7f12" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-<line x1="480.5" y1="254" x2="486.8" y2="254" stroke="#cf7f12" stroke-width="8" stroke-linecap="round"/>
-<circle cx="486.8" cy="254" r="6" fill="#cf7f12" stroke="#0d1117" stroke-width="2"/>
+<line x1="480.5" y1="254" x2="486.8" y2="254" stroke="#0d1117" stroke-width="16" stroke-linecap="round"/>
+<line x1="480.5" y1="254" x2="486.8" y2="254" stroke="#cf7f12" stroke-width="12" stroke-linecap="round"/>
 <text class="v" x="497.8" y="258">1.1x to 1.4x</text>
 <line x1="476.0" y1="304" x2="486.1" y2="304" stroke="#6e7681" stroke-width="2" stroke-linecap="round" opacity=".5"/>
 <circle cx="486.1" cy="304" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
@@ -59,12 +59,12 @@
 <circle cx="806.5" cy="204" r="6" fill="#1aa89a" stroke="#0d1117" stroke-width="2"/>
 <text class="v" x="817.5" y="208">10.4x</text>
 <line x1="726.0" y1="254" x2="758.4" y2="254" stroke="#cf7f12" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-<line x1="753.9" y1="254" x2="758.4" y2="254" stroke="#cf7f12" stroke-width="8" stroke-linecap="round"/>
-<circle cx="758.4" cy="254" r="6" fill="#cf7f12" stroke="#0d1117" stroke-width="2"/>
+<line x1="753.9" y1="254" x2="758.4" y2="254" stroke="#0d1117" stroke-width="16" stroke-linecap="round"/>
+<line x1="753.9" y1="254" x2="758.4" y2="254" stroke="#cf7f12" stroke-width="12" stroke-linecap="round"/>
 <text class="v" x="769.4" y="258">2.2x to 2.6x</text>
 <line x1="726.0" y1="304" x2="762.0" y2="304" stroke="#6e7681" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-<line x1="760.4" y1="304" x2="762.0" y2="304" stroke="#6e7681" stroke-width="8" stroke-linecap="round"/>
-<circle cx="762.0" cy="304" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<line x1="760.4" y1="304" x2="762.0" y2="304" stroke="#0d1117" stroke-width="16" stroke-linecap="round"/>
+<line x1="760.4" y1="304" x2="762.0" y2="304" stroke="#6e7681" stroke-width="12" stroke-linecap="round"/>
 <text class="v" x="773.0" y="308">2.7x to 2.9x</text>
 <rect x="24" y="97" width="4" height="14" rx="2" fill="#cf7f12"/>
 <text class="n" x="38" y="103">z-fasta <tspan class="r" font-weight="400">vs samtools faidx 1.24</tspan></text>
