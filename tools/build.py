@@ -128,11 +128,27 @@ def fetch_year(year):
     return {"fetched": date.today().isoformat(), "days": days}
 
 
+def weekly(counts):
+    """Contributions per week of one year, from its daily counts.
+
+    Weeks run seven days from 1 January. The one or two days left at the end of
+    a full year join week 52, and a week still in progress is left off. Each
+    week counts as its daily mean times seven, so a longer week 52 is not
+    overstated.
+    """
+    weeks = [counts[k:k + 7] for k in range(0, len(counts), 7)]
+    if len(weeks) > 52:
+        weeks[51:] = [sum(weeks[51:], [])]
+    elif weeks and len(weeks[-1]) < 7:
+        weeks.pop()
+    return [sum(w) * 7 / len(w) for w in weeks]
+
+
 def contributions(refresh):
-    """Weekly counts per year, and the date the newest year was fetched."""
+    """Weekly counts per year, the newest year's total so far, and the date it was fetched."""
     CACHE.mkdir(parents=True, exist_ok=True)
     this_year = date.today().year
-    years, fetched = {}, None
+    years, total, fetched = {}, 0, None
     for year in range(FIRST_YEAR, this_year + 1):
         path = CACHE / f"{year}.json"
         cached = json.loads(path.read_text()) if path.exists() else None
@@ -144,21 +160,21 @@ def contributions(refresh):
         fetched = cached["fetched"]
         # days after the fetch date are not over yet; leave them off the ridge
         counts = [n for d, n in cached["days"] if d <= cached["fetched"]]
-        years[year] = [sum(counts[k:k + 7]) for k in range(0, len(counts), 7)]
-    return years, fetched
+        years[year], total = weekly(counts), sum(counts)
+    return years, total, fetched
 
 
 # ------------------------------------------------------------------ header
 
-def header(t, years, fetched):
+def header(t, years, total, fetched):
     height = 250
-    x0, x1 = 330, 906
-    step, amp = 13, 150
+    x0, x1, amp = 330, 906, 150
     order = sorted(years)
     peak = max(max(w) for w in years.values() if w)
-    base0 = height - 34 - step * (len(order) - 1)
+    # the oldest and newest baselines stay put; each new year narrows the spacing
+    top, bottom = 60, height - 34
+    step = (bottom - top) / max(1, len(order) - 1)
     newest = order[-1]
-    total = sum(years[newest])
     asof = date.fromisoformat(fetched)
     o = svg_open(t, height, "Enes K. Ergin, PhD",
                  f"Bioinformatician in Vancouver: correct, fast, lightweight tools for biological data. "
@@ -167,35 +183,42 @@ def header(t, years, fetched):
                  f".nm{{font-size:30px;font-weight:600;fill:{t['ink']}}} .tg{{font-size:15px;fill:{t['ink2']}}} "
                  f".yr{{font-size:10px;fill:{t['ink3']}}} .cp{{font-size:11px;fill:{t['ink3']}}}")
     for i, year in enumerate(order):
+        by = top + i * step
+        f = i / max(1, len(order) - 1)
+        colour = mix(t["ridge_back"], t["ridge_front"], f)
+        if year in (order[0], order[len(order) // 2], newest):
+            o.append(f'<text class="yr" x="{x1 + 8}" y="{by + 3:.1f}">{year}</text>')
         weeks = years[year]
         if not weeks:
             continue
         # three-week moving average, on one linear scale shared by every year
         smooth = [sum(weeks[max(0, k - 1):k + 2]) / len(weeks[max(0, k - 1):k + 2]) for k in range(len(weeks))]
-        by = base0 + i * step
-        pts = [(x0 + k * (x1 - x0) / 52, by - v / peak * amp) for k, v in enumerate(smooth)]
-        d = f"M{x0},{by} L{pts[0][0]:.1f},{pts[0][1]:.1f} "
-        for (ax, ay), (bx, bb) in zip(pts, pts[1:]):
+        pts = [(x0 + k * (x1 - x0) / 51, by - v / peak * amp) for k, v in enumerate(smooth)]
+        # each segment leaves and enters its points level; with even spacing, S
+        # reflects the previous control point to exactly that tangent
+        curve = f"M{pts[0][0]:.1f},{pts[0][1]:.1f}"
+        for k, ((ax, ay), (bx, bb)) in enumerate(zip(pts, pts[1:])):
             mx = (ax + bx) / 2
-            d += f"C{mx:.1f},{ay:.1f} {mx:.1f},{bb:.1f} {bx:.1f},{bb:.1f} "
-        d += f"L{pts[-1][0]:.1f},{by}"
-        f = i / (len(order) - 1)
-        colour = mix(t["ridge_back"], t["ridge_front"], f)
+            curve += (f"C{mx:.1f},{ay:.1f} " if k == 0 else "S") + f"{mx:.1f},{bb:.1f} {bx:.1f},{bb:.1f}"
+        # the area is filled to hide the ridges behind it; only the curve is stroked
+        area = f"M{x0},{by:.1f}L{curve[1:]}L{pts[-1][0]:.1f},{by:.1f}Z"
         if year == newest:
-            # an opaque fill hides the older ridges, then a light wash of the ridge colour
-            o.append(f'<path d="{d}" fill="{t["surface"]}"/>')
-            o.append(f'<path d="{d}" fill="{colour}" fill-opacity=".12" stroke="{colour}" stroke-width="2.2" stroke-linejoin="round"/>')
+            o.append(f'<path d="{area}" fill="{mix(t["surface"], colour, 0.12)}"/>')
+            o.append(f'<path d="{curve}" fill="none" stroke="{colour}" stroke-width="2.2" stroke-linejoin="round" '
+                     'stroke-linecap="round"/>')
+            # the newest ridge stops at the last full week; a dot marks it
+            o.append(f'<circle cx="{pts[-1][0]:.1f}" cy="{pts[-1][1]:.1f}" r="3.5" fill="{colour}"/>')
         else:
-            o.append(f'<path d="{d}" fill="{t["surface"]}" stroke="{colour}" stroke-width="1.4" '
+            o.append(f'<path d="{area}" fill="{t["surface"]}"/>')
+            o.append(f'<path d="{curve}" fill="none" stroke="{colour}" stroke-width="1.4" '
                      f'stroke-opacity="{0.35 + 0.65 * f:.2f}" stroke-linejoin="round"/>')
-        if year in (order[0], order[len(order) // 2], newest):
-            o.append(f'<text class="yr" x="{x1 + 8}" y="{by + 3}">{year}</text>')
     o.append('<text class="nm" x="24" y="58">Enes K. Ergin, PhD</text>')
     o.append('<text class="tg" x="24" y="86">Bioinformatician in Vancouver</text>')
     o.append('<text class="tg" x="24" y="108">Correct, fast, lightweight tools</text>')
     o.append('<text class="tg" x="24" y="130">for biological data</text>')
-    o.append(f'<text class="cp" x="24" y="{height - 14}">Ridges: weekly GitHub contributions per year, '
-             f'{order[0]} to {asof:%B %Y}</text>')
+    # the caption sits under the plot, flush with the right end of the ridges
+    o.append(f'<text class="cp" x="{x1}" y="{height - 14}" text-anchor="end">Ridges: weekly GitHub contributions '
+             f'per year, {order[0]} to {asof:%B %Y}</text>')
     o.append("</svg>")
     return "\n".join(o)
 
@@ -371,11 +394,11 @@ def main():
     args = ap.parse_args()
 
     lines, tools, rows = load_data()
-    years, fetched = contributions(args.refresh)
+    years, total, fetched = contributions(args.refresh)
 
     ASSETS.mkdir(exist_ok=True)
     for theme, t in THEMES.items():
-        for name, svg in (("header", header(t, years, fetched)), ("evidence", evidence(t, rows)),
+        for name, svg in (("header", header(t, years, total, fetched)), ("evidence", evidence(t, rows)),
                           ("map", transit(t, lines, tools))):
             ET.fromstring(svg)  # raises on malformed markup before it is written
             (ASSETS / f"{name}-{theme}.svg").write_text(svg + "\n")
