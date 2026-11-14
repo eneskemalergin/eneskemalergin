@@ -310,7 +310,7 @@ def transit(t, lines, tools):
                  f"{len(order)} lines of tools: " + "; ".join(
                      f"{lines[k]['title']} ({', '.join(s['name'] for s in tools if s['line'] == k)})" for k in order)
                  + ". The " + ", ".join(lines[k]["title"] for k in branches)
-                 + " lines branch from the shared libraries. Filled stations are public; hollow stations are in development.",
+                 + " lines branch from the shared libraries. Solid rings are public, dashed rings are in development, and larger rings mark tools others build on.",
                  f".n{{font-size:13px;font-weight:600;fill:{t['ink']}}} .r{{font-size:11px;fill:{t['ink2']}}} "
                  f".h{{font-size:12px;font-weight:700;fill:{t['ink']};letter-spacing:.04em}} .m{{font-size:11px;fill:{t['ink3']}}}")
     if branches:
@@ -323,7 +323,8 @@ def transit(t, lines, tools):
         if not st:
             continue
         first = trunk_x + (0 if key == "base" else 58)
-        step = min(130, (920 - first) / max(1, len(st) - 1))
+        # the last station stays far enough from the right edge to center its labels
+        step = min(130, (890 - first) / max(1, len(st) - 1))
         xs = [first + i * step for i in range(len(st))]
         o.append(f'<text class="h" x="24" y="{y - 4}">{esc(line["title"].upper())}</text>')
         o.append(f'<text class="m" x="24" y="{y + 12}">{esc(line["stack"])}, since {line["since"]}</text>')

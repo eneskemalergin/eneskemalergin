@@ -1,7 +1,8 @@
 # Tools on the profile: one [[lines]] row per map line, one [[tools]] row per tool.
 # tools/build.py draws the map and writes the README lists from this file.
 # status: public (linked), dev (named, not linked), hidden (left out)
-# role: two or three words under the station; summary: one sentence for the list.
+# role: what the tool is, in two to four words that name its data where it has one,
+#   as in "RNA-seq aligner" or "mzML validator"; summary: one sentence for the list.
 # branch (line): the line branches from the shared libraries line, id "base".
 # hub (tool): other tools build on it; drawn as a larger station.
 
@@ -42,7 +43,7 @@ stack = "Zig"
 [[tools]]
 name = "pepVet"
 line = "analysis"
-role = "plan a digest"
+role = "digest simulator"
 status = "public"
 url = "https://bioconductor.org/packages/pepVet/"
 lang = "R"
@@ -51,7 +52,7 @@ summary = "Scores how well each protein digests before a run; in Bioconductor."
 [[tools]]
 name = "pxseek"
 line = "analysis"
-role = "find datasets"
+role = "dataset search"
 status = "public"
 url = "https://github.com/LangeLab/pxseek"
 lang = "Python"
@@ -60,7 +61,7 @@ summary = "Queries, filters, and downloads ProteomeXchange metadata, with a loca
 [[tools]]
 name = "PXAudit"
 line = "analysis"
-role = "grade for reuse"
+role = "metadata audit"
 status = "public"
 url = "https://github.com/LangeLab/PXAudit"
 lang = "Python"
@@ -78,7 +79,7 @@ summary = "Batch correction that tolerates missing values, ported from HarmonizR
 [[tools]]
 name = "SQuAPP"
 line = "analysis"
-role = "analysis app"
+role = "Shiny analysis app"
 status = "public"
 url = "https://github.com/LangeLab/SQuAPP"
 lang = "R"
@@ -96,7 +97,7 @@ summary = "Tests for equivalence beside difference, so a protein can be called s
 [[tools]]
 name = "ProteoForge"
 line = "analysis"
-role = "proteoforms"
+role = "proteoform detection"
 status = "public"
 url = "https://github.com/eneskemalergin/ProteoForge"
 lang = "Python"
@@ -133,7 +134,7 @@ summary = "Maps peptides onto a fusion protein and both parents, and checks whic
 [[tools]]
 name = "zmz"
 line = "ms"
-role = "read and write mzML"
+role = "mzML reader and writer"
 hub = true
 status = "public"
 url = "https://github.com/eneskemalergin/zmz"
@@ -143,7 +144,7 @@ summary = "mzML reader and writer that streams in a few MiB; the other tools on 
 [[tools]]
 name = "mzValidate"
 line = "ms"
-role = "validate"
+role = "mzML validator"
 status = "public"
 url = "https://github.com/eneskemalergin/mzValidate"
 lang = "Zig"
@@ -152,7 +153,7 @@ summary = "Validates mzML in one streaming pass."
 [[tools]]
 name = "mzDiff"
 line = "ms"
-role = "compare runs"
+role = "mzML diff"
 status = "public"
 url = "https://github.com/eneskemalergin/mzDiff"
 lang = "Zig"
@@ -161,7 +162,7 @@ summary = "Compares two mzML files by meaning rather than bytes, in bounded memo
 [[tools]]
 name = "mzArc"
 line = "ms"
-role = "compress"
+role = "mzML compressor"
 status = "public"
 url = "https://github.com/eneskemalergin/mzarc"
 lang = "Zig"
@@ -170,7 +171,7 @@ summary = "Compresses mzML, byte-exact when asked, in about 1 MiB of memory."
 [[tools]]
 name = "zpx"
 line = "ms"
-role = "peptides and decoys"
+role = "peptide databases"
 status = "dev"
 url = ""
 lang = "Zig"
@@ -189,7 +190,7 @@ summary = "Reads Thermo .raw files and timsTOF .d directories without vendor lib
 [[tools]]
 name = "z-fastq"
 line = "seq"
-role = "count and stats"
+role = "FASTQ toolkit"
 status = "public"
 url = "https://github.com/eneskemalergin/z-fastq"
 lang = "Zig"
@@ -198,7 +199,7 @@ summary = "Counts, summarizes, and validates FASTQ, plain or gzip, in a few MiB 
 [[tools]]
 name = "z-fasta"
 line = "seq"
-role = "index and extract"
+role = "FASTA toolkit"
 status = "public"
 url = "https://github.com/eneskemalergin/z-fasta"
 lang = "Zig"
@@ -207,7 +208,7 @@ summary = "Indexes, extracts, and validates FASTA, writing samtools-compatible .
 [[tools]]
 name = "zamf"
 line = "seq"
-role = "SAM and BAM"
+role = "SAM and BAM toolkit"
 status = "dev"
 url = ""
 lang = "Zig"
@@ -293,7 +294,7 @@ summary = "Simulates RNA-seq libraries with per-read truth from declared fusions
 [[tools]]
 name = "zipir"
 line = "base"
-role = "DEFLATE and BGZF"
+role = "compression library"
 hub = true
 status = "public"
 url = "https://github.com/eneskemalergin/zipir"
@@ -303,7 +304,7 @@ summary = "gzip, zlib, DEFLATE, BGZF, and tar with no dependencies, in fixed mem
 [[tools]]
 name = "z-xml"
 line = "base"
-role = "XML"
+role = "XML reader and writer"
 status = "public"
 url = "https://github.com/eneskemalergin/z-xml"
 lang = "Zig"
@@ -312,7 +313,7 @@ summary = "XML event reader, document model, and streaming writer."
 [[tools]]
 name = "b64z"
 line = "base"
-role = "Base64"
+role = "Base64 codec"
 status = "public"
 url = "https://github.com/eneskemalergin/b64z"
 lang = "Zig"
@@ -321,7 +322,7 @@ summary = "Strict RFC 4648 Base64 with scalar and AVX2 paths."
 [[tools]]
 name = "z-oci"
 line = "base"
-role = "container images"
+role = "registry client"
 status = "public"
 url = "https://github.com/eneskemalergin/z-oci"
 lang = "Zig"
@@ -330,7 +331,7 @@ summary = "Read-only client for OCI and Docker registries, with digest checks."
 [[tools]]
 name = "zebrac"
 line = "base"
-role = "benchmarks"
+role = "benchmark runner"
 status = "public"
 url = "https://github.com/eneskemalergin/zebrac"
 lang = "Zig"
@@ -339,7 +340,7 @@ summary = "Benchmarks commands on Linux with hardware counters and peak memory."
 [[tools]]
 name = "z-toml"
 line = "base"
-role = "TOML"
+role = "TOML parser"
 hub = true
 status = "public"
 url = "https://github.com/eneskemalergin/z-toml"
@@ -349,7 +350,7 @@ summary = "TOML 1.1.0 parser, checked against the official test corpus."
 [[tools]]
 name = "kanit"
 line = "base"
-role = "workflows"
+role = "workflow engine"
 status = "public"
 url = "https://github.com/Zenteomics/kanit"
 lang = "Zig"

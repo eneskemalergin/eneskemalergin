@@ -1,74 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" role="img" aria-labelledby="t d">
 <title id="t">Map of the work</title>
-<desc id="d">5 lines of tools: Proteomics analysis (pepVet, pxseek, PXAudit, HarmonizePy, SQuAPP, QuEStVar, ProteoForge, ihwkit, loqculate, FusionPep); Mass spectrometry (zmz, mzValidate, mzDiff, mzArc, zpx); Sequence data (z-fastq, z-fasta, zamf); NGS tools (refz, starz, zeklem, zigot); Shared libraries (zipir, z-xml, b64z, z-oci, zebrac, z-toml, kanit). The Mass spectrometry, Sequence data, NGS tools lines branch from the shared libraries. Filled stations are public; hollow stations are in development.</desc>
+<desc id="d">5 lines of tools: Proteomics analysis (pepVet, pxseek, PXAudit, HarmonizePy, SQuAPP, QuEStVar, ProteoForge, ihwkit, loqculate, FusionPep); Mass spectrometry (zmz, mzValidate, mzDiff, mzArc, zpx); Sequence data (z-fastq, z-fasta, zamf); NGS tools (refz, starz, zeklem, zigot); Shared libraries (zipir, z-xml, b64z, z-oci, zebrac, z-toml, kanit). The Mass spectrometry, Sequence data, NGS tools lines branch from the shared libraries. Solid rings are public, dashed rings are in development, and larger rings mark tools others build on.</desc>
 <style>text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif} .n{font-size:13px;font-weight:600;fill:#e6edf3} .r{font-size:11px;fill:#9198a1} .h{font-size:12px;font-weight:700;fill:#e6edf3;letter-spacing:.04em} .m{font-size:11px;fill:#6e7681}</style>
 <rect width="960" height="700" rx="6" fill="#0d1117"/>
 <path d="M232,608 L232,224 Q232,210 246,210" fill="none" stroke="#6e7681" stroke-width="7" stroke-linecap="round"/>
 <text class="h" x="24" y="88">PROTEOMICS ANALYSIS</text>
 <text class="m" x="24" y="104">Python and R, since 2017</text>
-<line x1="232" y1="92" x2="920.0" y2="92" stroke="#9479ea" stroke-width="7" stroke-linecap="round"/>
+<line x1="232" y1="92" x2="890.0" y2="92" stroke="#9479ea" stroke-width="7" stroke-linecap="round"/>
 <circle cx="290.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
 <text class="n" x="290.0" y="56" text-anchor="middle">pepVet</text>
-<text class="r" x="290.0" y="70" text-anchor="middle">plan a digest</text>
-<circle cx="360.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="360.0" y="122" text-anchor="middle">pxseek</text>
-<text class="r" x="360.0" y="136" text-anchor="middle">find datasets</text>
-<circle cx="430.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="430.0" y="56" text-anchor="middle">PXAudit</text>
-<text class="r" x="430.0" y="70" text-anchor="middle">grade for reuse</text>
-<circle cx="500.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="500.0" y="122" text-anchor="middle">HarmonizePy</text>
-<text class="r" x="500.0" y="136" text-anchor="middle">batch correction</text>
-<circle cx="570.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="570.0" y="56" text-anchor="middle">SQuAPP</text>
-<text class="r" x="570.0" y="70" text-anchor="middle">analysis app</text>
-<circle cx="640.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="640.0" y="122" text-anchor="middle">QuEStVar</text>
-<text class="r" x="640.0" y="136" text-anchor="middle">equivalence tests</text>
-<circle cx="710.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="710.0" y="56" text-anchor="middle">ProteoForge</text>
-<text class="r" x="710.0" y="70" text-anchor="middle">proteoforms</text>
-<circle cx="780.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="780.0" y="122" text-anchor="middle">ihwkit</text>
-<text class="r" x="780.0" y="136" text-anchor="middle">weighted FDR</text>
-<circle cx="850.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="850.0" y="56" text-anchor="middle">loqculate</text>
-<text class="r" x="850.0" y="70" text-anchor="middle">LOD and LOQ</text>
-<circle cx="920.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
-<text class="n" x="920.0" y="122" text-anchor="middle">FusionPep</text>
-<text class="r" x="920.0" y="136" text-anchor="middle">fusion peptides</text>
+<text class="r" x="290.0" y="70" text-anchor="middle">digest simulator</text>
+<circle cx="356.7" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="356.7" y="122" text-anchor="middle">pxseek</text>
+<text class="r" x="356.7" y="136" text-anchor="middle">dataset search</text>
+<circle cx="423.3" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="423.3" y="56" text-anchor="middle">PXAudit</text>
+<text class="r" x="423.3" y="70" text-anchor="middle">metadata audit</text>
+<circle cx="490.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="490.0" y="122" text-anchor="middle">HarmonizePy</text>
+<text class="r" x="490.0" y="136" text-anchor="middle">batch correction</text>
+<circle cx="556.7" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="556.7" y="56" text-anchor="middle">SQuAPP</text>
+<text class="r" x="556.7" y="70" text-anchor="middle">Shiny analysis app</text>
+<circle cx="623.3" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="623.3" y="122" text-anchor="middle">QuEStVar</text>
+<text class="r" x="623.3" y="136" text-anchor="middle">equivalence tests</text>
+<circle cx="690.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="690.0" y="56" text-anchor="middle">ProteoForge</text>
+<text class="r" x="690.0" y="70" text-anchor="middle">proteoform detection</text>
+<circle cx="756.7" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="756.7" y="122" text-anchor="middle">ihwkit</text>
+<text class="r" x="756.7" y="136" text-anchor="middle">weighted FDR</text>
+<circle cx="823.3" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="823.3" y="56" text-anchor="middle">loqculate</text>
+<text class="r" x="823.3" y="70" text-anchor="middle">LOD and LOQ</text>
+<circle cx="890.0" cy="92" r="7" fill="#0d1117" stroke="#9479ea" stroke-width="4"/>
+<text class="n" x="890.0" y="122" text-anchor="middle">FusionPep</text>
+<text class="r" x="890.0" y="136" text-anchor="middle">fusion peptides</text>
 <text class="h" x="24" y="206">MASS SPECTROMETRY</text>
 <text class="m" x="24" y="222">Zig, since 2025</text>
 <line x1="232" y1="210" x2="810.0" y2="210" stroke="#1aa89a" stroke-width="7" stroke-linecap="round"/>
 <circle cx="232" cy="210" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="3"/>
 <circle cx="290.0" cy="210" r="10" fill="#0d1117" stroke="#1aa89a" stroke-width="4"/>
 <text class="n" x="290.0" y="174" text-anchor="middle">zmz</text>
-<text class="r" x="290.0" y="188" text-anchor="middle">read and write mzML</text>
+<text class="r" x="290.0" y="188" text-anchor="middle">mzML reader and writer</text>
 <circle cx="420.0" cy="210" r="7" fill="#0d1117" stroke="#1aa89a" stroke-width="4"/>
 <text class="n" x="420.0" y="240" text-anchor="middle">mzValidate</text>
-<text class="r" x="420.0" y="254" text-anchor="middle">validate</text>
+<text class="r" x="420.0" y="254" text-anchor="middle">mzML validator</text>
 <circle cx="550.0" cy="210" r="7" fill="#0d1117" stroke="#1aa89a" stroke-width="4"/>
 <text class="n" x="550.0" y="174" text-anchor="middle">mzDiff</text>
-<text class="r" x="550.0" y="188" text-anchor="middle">compare runs</text>
+<text class="r" x="550.0" y="188" text-anchor="middle">mzML diff</text>
 <circle cx="680.0" cy="210" r="7" fill="#0d1117" stroke="#1aa89a" stroke-width="4"/>
 <text class="n" x="680.0" y="240" text-anchor="middle">mzArc</text>
-<text class="r" x="680.0" y="254" text-anchor="middle">compress</text>
+<text class="r" x="680.0" y="254" text-anchor="middle">mzML compressor</text>
 <circle cx="810.0" cy="210" r="6" fill="#0d1117" stroke="#1aa89a" stroke-width="2.5" stroke-dasharray="2.6 2.4"/>
 <text class="n" x="810.0" y="174" text-anchor="middle">zpx</text>
-<text class="r" x="810.0" y="188" text-anchor="middle">peptides and decoys</text>
+<text class="r" x="810.0" y="188" text-anchor="middle">peptide databases</text>
 <text class="h" x="24" y="324">SEQUENCE DATA</text>
 <text class="m" x="24" y="340">Zig, since 2026</text>
 <line x1="232" y1="328" x2="550.0" y2="328" stroke="#cf7f12" stroke-width="7" stroke-linecap="round"/>
 <circle cx="232" cy="328" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="3"/>
 <circle cx="290.0" cy="328" r="7" fill="#0d1117" stroke="#cf7f12" stroke-width="4"/>
 <text class="n" x="290.0" y="292" text-anchor="middle">z-fastq</text>
-<text class="r" x="290.0" y="306" text-anchor="middle">count and stats</text>
+<text class="r" x="290.0" y="306" text-anchor="middle">FASTQ toolkit</text>
 <circle cx="420.0" cy="328" r="7" fill="#0d1117" stroke="#cf7f12" stroke-width="4"/>
 <text class="n" x="420.0" y="358" text-anchor="middle">z-fasta</text>
-<text class="r" x="420.0" y="372" text-anchor="middle">index and extract</text>
+<text class="r" x="420.0" y="372" text-anchor="middle">FASTA toolkit</text>
 <circle cx="550.0" cy="328" r="6" fill="#0d1117" stroke="#cf7f12" stroke-width="2.5" stroke-dasharray="2.6 2.4"/>
 <text class="n" x="550.0" y="292" text-anchor="middle">zamf</text>
-<text class="r" x="550.0" y="306" text-anchor="middle">SAM and BAM</text>
+<text class="r" x="550.0" y="306" text-anchor="middle">SAM and BAM toolkit</text>
 <text class="h" x="24" y="442">NGS TOOLS</text>
 <text class="m" x="24" y="458">Zig, since 2026</text>
 <line x1="232" y1="446" x2="680.0" y2="446" stroke="#c61047" stroke-width="7" stroke-linecap="round"/>
@@ -89,28 +89,28 @@
 <text class="r" x="615.0" y="519" text-anchor="middle">gene fusions in RNA-seq</text>
 <text class="h" x="24" y="604">SHARED LIBRARIES</text>
 <text class="m" x="24" y="620">Zig, since 2026</text>
-<line x1="232" y1="608" x2="920.0" y2="608" stroke="#6e7681" stroke-width="7" stroke-linecap="round"/>
+<line x1="232" y1="608" x2="890.0" y2="608" stroke="#6e7681" stroke-width="7" stroke-linecap="round"/>
 <circle cx="232.0" cy="608" r="10" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
 <text class="n" x="232.0" y="638" text-anchor="middle">zipir</text>
-<text class="r" x="232.0" y="652" text-anchor="middle">DEFLATE and BGZF</text>
-<circle cx="346.7" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
-<text class="n" x="346.7" y="572" text-anchor="middle">z-xml</text>
-<text class="r" x="346.7" y="586" text-anchor="middle">XML</text>
-<circle cx="461.3" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
-<text class="n" x="461.3" y="638" text-anchor="middle">b64z</text>
-<text class="r" x="461.3" y="652" text-anchor="middle">Base64</text>
-<circle cx="576.0" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
-<text class="n" x="576.0" y="572" text-anchor="middle">z-oci</text>
-<text class="r" x="576.0" y="586" text-anchor="middle">container images</text>
-<circle cx="690.7" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
-<text class="n" x="690.7" y="638" text-anchor="middle">zebrac</text>
-<text class="r" x="690.7" y="652" text-anchor="middle">benchmarks</text>
-<circle cx="805.3" cy="608" r="10" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
-<text class="n" x="805.3" y="572" text-anchor="middle">z-toml</text>
-<text class="r" x="805.3" y="586" text-anchor="middle">TOML</text>
-<circle cx="920.0" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
-<text class="n" x="920.0" y="638" text-anchor="middle">kanit</text>
-<text class="r" x="920.0" y="652" text-anchor="middle">workflows</text>
+<text class="r" x="232.0" y="652" text-anchor="middle">compression library</text>
+<circle cx="341.7" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
+<text class="n" x="341.7" y="572" text-anchor="middle">z-xml</text>
+<text class="r" x="341.7" y="586" text-anchor="middle">XML reader and writer</text>
+<circle cx="451.3" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
+<text class="n" x="451.3" y="638" text-anchor="middle">b64z</text>
+<text class="r" x="451.3" y="652" text-anchor="middle">Base64 codec</text>
+<circle cx="561.0" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
+<text class="n" x="561.0" y="572" text-anchor="middle">z-oci</text>
+<text class="r" x="561.0" y="586" text-anchor="middle">registry client</text>
+<circle cx="670.7" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
+<text class="n" x="670.7" y="638" text-anchor="middle">zebrac</text>
+<text class="r" x="670.7" y="652" text-anchor="middle">benchmark runner</text>
+<circle cx="780.3" cy="608" r="10" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
+<text class="n" x="780.3" y="572" text-anchor="middle">z-toml</text>
+<text class="r" x="780.3" y="586" text-anchor="middle">TOML parser</text>
+<circle cx="890.0" cy="608" r="7" fill="#0d1117" stroke="#6e7681" stroke-width="4"/>
+<text class="n" x="890.0" y="638" text-anchor="middle">kanit</text>
+<text class="r" x="890.0" y="652" text-anchor="middle">workflow engine</text>
 <circle cx="32" cy="680" r="6" fill="#0d1117" stroke="#9198a1" stroke-width="3.5"/>
 <text class="r" x="46" y="684">public</text>
 <circle cx="108" cy="680" r="6" fill="#0d1117" stroke="#9198a1" stroke-width="2.5" stroke-dasharray="2.6 2.4"/>
